@@ -1,0 +1,73 @@
+body {
+    background: linear-gradient(135deg, #a6badd 10%, #5aa8dbde 100%);
+}
+h1 {
+    text-align: center;
+}
+.red {
+    color: rgba(247, 9, 9, 0.733);
+}
+.green {
+    color: green;
+}
+.down .orange {
+    background-color: rgb(255, 126, 5);
+}
+.calculator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 280px;
+    height: 560px;
+    border-color: grey;
+    background: #d3d3d3;
+    padding: 1.5rem;
+    box-shadow: 0 0 50px 5px rgb(10, 10, 10);
+}
+.logo {
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-top: -1rem;
+    margin-left: 1rem;
+    display: block;
+}
+.model {
+    display: block;
+    margin-top: 0.75em;
+    font-style: italic;
+    font-weight: bold;
+}
+.svpam {
+    display: inline-block;
+    color: green;
+    font-weight: bold;
+    font-size: small;
+}
+.solar {
+    float: right;
+    margin: -3em 0;
+    width: 55%;
+    height: 3rem;
+    background: hsla(336, 13%, 23%, 0.808);
+    box-shadow: inset 0 0 15px rgb(8, 8, 8);
+    border-radius: 10px;
+}
+.power {
+    float: right;
+    line-height: 1.5rem;
+    font-size: xx-small;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.screen {
+    width: 100%;
+    height: 6rem;
+    background: hsla(157, 34%, 64%, 0.568);
+    border-radius: 4px;
+    box-shadow: inset 0 0 15px black;
+    margin: 0.5em 0;
+}
+/* buttons start */
