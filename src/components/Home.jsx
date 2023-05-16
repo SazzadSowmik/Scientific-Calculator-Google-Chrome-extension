@@ -25,14 +25,12 @@ const Home = () => {
   }
 
   const equalEval = () => {
-    const numbers = screen.display.split(/[+-×÷]/).map(Number);
+    const numbers = screen.display.split(/[-+×÷]/).map(Number);
     const operators = screen.display.split(/\d+/).filter(Boolean);
-
-    console.log(numbers);
 
     let result = numbers[0];
     for (let i = 0; i < operators.length; i++) {
-      if (operators[i] === "+") {
+      if (operators[i] === "+") {         
         result += numbers[i+1];
       } else if (operators[i] === "-") {
         result -= numbers[i+1];
@@ -198,8 +196,8 @@ const Home = () => {
               <td>MATRIX <button value="4" id="number4" onClick={(e)=>changeValue(e)}>4</button></td>
               <td>VECTOR<button value="5" id="number5" onClick={(e)=>changeValue(e)}>5</button></td>
               <td>lol<button value="6" id="number6" onClick={(e)=>changeValue(e)}>6</button></td>
-              <td>nPr <button value="×" id="substract" onClick={(e)=>changeValue(e)}>×</button></td>
-              <td>nCr <button value="÷" id="substract" onClick={(e)=>changeValue(e)}>÷</button></td>
+              <td>nPr <button value="×" id="multiply" onClick={(e)=>changeValue(e)}>×</button></td>
+              <td>nCr <button value="÷" id="divition" onClick={(e)=>changeValue(e)}>÷</button></td>
             </tr>
             <tr>
               <td>STAT <button value="1" id="number1" onClick={(e)=>changeValue(e)}>1</button></td>
