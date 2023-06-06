@@ -1,3 +1,21 @@
+@font-face {
+    font-family: Digital-7;
+    src: url('../fonts/digital-7.ttf') format('truetype');
+}
+@font-face {
+    font-family: Square;
+    src: url('../fonts/Square.ttf') format('truetype');
+}
+.digit-font-result{
+    font-family: Digital-7, monospace;
+    font-size: xxx-large;
+    display: flex;
+    position: inherit;
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    padding-left: 241px;
+    padding-top: 30px;
+}
 body {
     background: linear-gradient(135deg, #a6badd 10%, #5aa8dbde 100%);
 }
@@ -27,6 +45,7 @@ h1 {
     box-shadow: 0 0 50px 5px rgb(10, 10, 10);
 }
 .logo {
+    font-family: Square, sans-serif;
     font-weight: bolder;
     text-transform: uppercase;
     margin-top: -1rem;
@@ -71,3 +90,87 @@ h1 {
     margin: 0.5em 0;
 }
 /* buttons start */
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: saddlebrown;
+    font-size: x-small;
+    line-height: 20px;
+  }
+  .top-buttons button {
+    width: 2.35rem;
+    height: 2em;
+    border-radius: 15px;
+    background-color: gray;
+  }
+  .shift {
+    font-family: Square, sans-serif;
+    margin-top: 1em;
+  }
+  .alpha {
+    font-family: Square, sans-serif;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+  }
+  .mode {
+    font-family: Square, sans-serif;
+    margin-top: 1.5em;
+    margin-left: 11em;
+    margin-right: 1.5em;
+  }
+  .on {
+    font-family: Square, sans-serif;
+    margin-top: 1em;
+  }
+  .replay {
+    font-family: Square, sans-serif;
+    background: grey;
+    width: 78px;
+    height: 70px;
+    line-height: 70px;
+    position: absolute;
+    left: 40%;
+    top: 33%;
+    border-radius: 125px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 2px 2px 5px 0 black;
+  }
+  .up {
+    font-family: Square, sans-serif;
+    display: flex;
+    justify-content: center;
+    color: saddlebrown;
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .up button {
+    font-family: Square, sans-serif;
+    color: white;
+    background-color: black;
+    height: 20px;
+    width: 45px;
+    border-radius: 8px;
+  }
+  .down {
+    font-family: Square, sans-serif;
+    display: flex;
+    justify-content: center;
+    color: saddlebrown;
+    font-size: 10px;
+    text-align: center;
+  }
+  .down button {
+    font-family: Square, sans-serif;
+    color: black;
+    background-color: white;
+    height: 30px;
+    width: 50px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 black;
+  }
