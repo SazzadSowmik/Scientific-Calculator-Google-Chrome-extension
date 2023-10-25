@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../assets/styles/home.css'
 
 const Home = () => {
@@ -11,35 +11,52 @@ const Home = () => {
     setScreen(0)
   }
 
+  useEffect(() => {
+    //console.log('isCalculate changed:', isCalculated);
+  }, [screen]);
+
   const changeValue = (event) => {
     if (event.target.value === 'AC'){
       setScreen({
         display : 0
       });
     }else {
-      let dis = screen.display === 0 ? event.target.value : screen.display + event.target.value;
+      let dis = (screen.display === 0) ? event.target.value : screen.display + event.target.value;
       setScreen({
         display: dis
       });
     }
   }
 
+  const handleDelete = (event) => {
+    if (screen.display.length > 0) {
+      const updatedValue = screen.display.slice(0, -1); // Remove the last character
+      console.log(updatedValue)
+      setScreen({
+        display: updatedValue
+      });
+    }
+  }
+
   const equalEval = () => {
+    setIsCalculated(true);
     const numbers = screen.display.split(/[-+×÷]/).map(Number);
     const operators = screen.display.split(/\d+/).filter(Boolean);
 
-    let result = numbers[0];
+    let result = parseFloat(numbers[0]);
     for (let i = 0; i < operators.length; i++) {
       if (operators[i] === "+") {         
-        result += numbers[i+1];
+        result += parseFloat(numbers[i+1]);
       } else if (operators[i] === "-") {
-        result -= numbers[i+1];
+        result -= parseFloat(numbers[i+1]);
       } else if (operators[i] === "×") {
-        result *= numbers[i+1];
+        result *= parseFloat(numbers[i+1]);
       } else if (operators[i] === "÷") {
-        result /= numbers[i+1];
+        result /= parseFloat(numbers[i+1]);
       }
+      console.log(operators[i])
     }
+    console.log(numbers[0]+numbers[1])
 
     setScreen ({
       display: result
@@ -189,7 +206,7 @@ const Home = () => {
               <td>CONST <button value="7" id="number7" onClick={(e)=>changeValue(e)}>7</button></td>
               <td>CONV <button value="8" id="number8" onClick={(e)=>changeValue(e)}>8</button></td>
               <td>CLR <button value="9" id="number9" onClick={(e)=>changeValue(e)}>9</button></td>
-              <td>INS <button className="orange">DEL</button></td>
+              <td>INS <button className="orange" value="del" id="del" onClick={(e)=>handleDelete(e)}>DEL</button></td>
               <td>OFF <button className="orange" value='AC' id="reset" onClick={(e)=>changeValue(e)}>AC</button></td>
             </tr>
             <tr>
@@ -208,7 +225,7 @@ const Home = () => {
             </tr>
             <tr>
               <td>Rnd <button value="0" id="number3" onClick={(e)=>changeValue(e)}>0</button></td>
-              <td>Ran# <span>Raint</span><button>•</button></td>
+              <td>Ran# <span>Raint</span><button value="." id="dot" onClick={(e)=>changeValue(e)}>•</button></td>
               <td>π<span className="red">e</span><button>×10 <sup>x</sup></button></td>
               <td>DRG <button>Ans</button></td>
               <td>= <button onClick={equalEval}>=</button></td>
