@@ -7,15 +7,20 @@
     src: url('../fonts/Square.ttf') format('truetype');
 }
 .digit-font-result{
-    font-family: Digital-7, monospace;
-    font-size: xxx-large;
-    display: flex;
-    position: inherit;
-    align-items: flex-end;
-    flex-direction: column-reverse;
-    padding-left: 241px;
-    padding-top: 30px;
+  width: 100%;
+  font-family: Digital-7, monospace;
+  height: 100%;
+  font-size: xxx-large;
+  display: flex;
+  position: inherit;
+  align-items: flex-end;
+  flex-direction: column-reverse;
+  overflow-x: hidden ;
+
+  /* padding-left: 0; */
+  /* padding-top: 0; */
 }
+
 body {
     background: linear-gradient(135deg, #a6badd 10%, #5aa8dbde 100%);
 }
