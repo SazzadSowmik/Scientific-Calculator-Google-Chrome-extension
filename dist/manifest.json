@@ -1,9 +1,0 @@
-{
-    "manifest_version": 3,
-    "name": "Scientific Calculator",
-    "description": "Introducing my personal project, the Scientific Calculator Google Chrome extension!",
-    "version": "1.0.0",
-    "action": {
-      "default_popup": "popup.html"
-    }
-}
